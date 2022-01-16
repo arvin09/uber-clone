@@ -9,13 +9,13 @@ const data = [
     {
         id: '123',
         title: 'Get a ride',
-        image: 'https://links.papareact.com/3pn',
+        image: require('../assets/UberX.webp'),
         screen: 'MapScreen'
     },
     {
         id: '456',
         title: 'Order food',
-        image: 'https://links.papareact.com/28w',
+        image: require('../assets/uber-eats.png'),
         screen: 'EatsScreen'
     }
 ]
@@ -36,7 +36,7 @@ const NavOptions = () => {
                 <View style={tw`${!origin && "opacity-30"}`}>
                     <Image 
                     style={{width: 120, height: 120, resizeMode:'contain'}}
-                    source={{uri: item.image}}
+                    source={item.image}
                     />
                     <Text style={tw`mt-2 text-lg font-bold`}>{item.title}</Text>
                     <Icon style={tw`p-2 bg-black rounded-full w-10 mt-4`}

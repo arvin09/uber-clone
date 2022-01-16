@@ -18,9 +18,8 @@ const Home = () => {
                         height: 100,
                         resizeMode: "contain",
                     }}
-                    source={{ uri: "https://links.papareact.com/gzs" }
-
-                    } />
+                    source={require('../assets/uber-logo.png')} 
+                />
                 <GooglePlacesAutocomplete
                     placeholder="Where From?"
                     minLength={2}

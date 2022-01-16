@@ -11,20 +11,19 @@ const data = [
         id: 'Uber-X-123',
         title: 'UberX',
         multiplier: 1,
-        image: 'https://links.papareact.com/3pn'
+        image: require('../assets/UberX.webp')
     },
     {
         id: 'Uber-XL-456',
         title: 'Uber XL',
         multiplier: 1.2,
-        image: 'https://links.papareact.com/5w8'
+        image: require('../assets/UberXL.webp')
     },
     {
         id: 'Uber-LUX-789',
         title: 'Uber LUX',
         multiplier: 1.75,
-        // image: '../assets/Lux.webp'
-        image: 'https://links.papareact.com/7pf'
+        image: require('../assets/Lux.webp')
     }
 ]
 
@@ -42,7 +41,9 @@ const RideOptionsCard = () => {
                 >
                     <Icon name="chevron-left" type="fontawesome" />
                 </TouchableOpacity>
-                <Text style={tw`text-center py-5 text-xl`}>Select a Rides - {travelTimeInformation?.distance?.text}</Text>
+                <Text style={tw`text-center py-5 text-xl`}>
+                    Select a Rides - {parseFloat((travelTimeInformation?.distance?.value) / 1000).toFixed(2)} km
+                </Text>
             </View>
 
             <FlatList
@@ -60,9 +61,9 @@ const RideOptionsCard = () => {
                                 height: 100,
                                 resizeMode: "contain",
                             }}
-                            source={{ uri: image }}
+                            source={image}
                         />
-                        <View style={tw`-ml-6`}>
+                        <View style={tw`-ml-6 px-3`}>
                             <Text style={tw`text-xl font-bold`}>{title}</Text>
                             <Text>{travelTimeInformation?.duration?.text} Travel Time</Text>
                         </View>
